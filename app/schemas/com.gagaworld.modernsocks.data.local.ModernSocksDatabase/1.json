@@ -1,0 +1,122 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "bd0a819d5cd333965472fbac32665aae",
+    "entities": [
+      {
+        "tableName": "proxy_profiles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `host` TEXT NOT NULL, `port` INTEGER NOT NULL, `authenticationEnabled` INTEGER NOT NULL, `credentialFormatVersion` INTEGER, `credentialIv` BLOB, `credentialCiphertext` BLOB, `dnsServer` TEXT, `mtu` INTEGER NOT NULL, `bypassLan` INTEGER NOT NULL, `autoReconnect` INTEGER NOT NULL, `isSelected` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "host",
+            "columnName": "host",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "port",
+            "columnName": "port",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "authenticationEnabled",
+            "columnName": "authenticationEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "credentialFormatVersion",
+            "columnName": "credentialFormatVersion",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "credentialIv",
+            "columnName": "credentialIv",
+            "affinity": "BLOB"
+          },
+          {
+            "fieldPath": "credentialCiphertext",
+            "columnName": "credentialCiphertext",
+            "affinity": "BLOB"
+          },
+          {
+            "fieldPath": "dnsServer",
+            "columnName": "dnsServer",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "mtu",
+            "columnName": "mtu",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bypassLan",
+            "columnName": "bypassLan",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "autoReconnect",
+            "columnName": "autoReconnect",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSelected",
+            "columnName": "isSelected",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_proxy_profiles_isSelected",
+            "unique": false,
+            "columnNames": [
+              "isSelected"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_proxy_profiles_isSelected` ON `${TABLE_NAME}` (`isSelected`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bd0a819d5cd333965472fbac32665aae')"
+    ]
+  }
+}
