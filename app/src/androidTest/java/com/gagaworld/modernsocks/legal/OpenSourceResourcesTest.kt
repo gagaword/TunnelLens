@@ -32,5 +32,6 @@ class OpenSourceResourcesTest {
         assertTrue(notices.contains("hev-socks5-tunnel"))
         assertTrue(notices.contains("lwIP"))
         assertTrue(notices.contains("tun2proxy 0.8.2"))
+        assertTrue(notices.contains("Apache License"))
     }
 }

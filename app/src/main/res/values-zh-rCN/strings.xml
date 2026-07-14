@@ -128,6 +128,7 @@
     <string name="settings_security_body">用户名和密码使用应用专属的 Android Keystore 密钥加密。SOCKS5 本身不一定会加密设备到代理服务器之间的流量。</string>
     <string name="settings_open_source_title">自由与开源软件</string>
     <string name="settings_open_source_body">TunnelLens 采用 GNU GPL 第 3 版或任何后续版本许可。你可以依照该许可证重新分发和修改本应用。本应用不提供任何担保。分发构建产物时必须提供对应源代码并保留第三方声明。</string>
+    <string name="settings_open_source_view_source">查看源代码</string>
     <string name="settings_open_source_view_license">查看 GNU GPL 第 3 版</string>
     <string name="settings_open_source_view_notices">查看第三方声明</string>
     <string name="settings_open_source_license_title">GNU 通用公共许可证第 3 版</string>

@@ -55,13 +55,18 @@ and an offline copy of GNU GPL version 3. The canonical copy also remains at
 the repository root. English is the controlling license text; the surrounding
 UI explanation is localized in English and Simplified Chinese.
 
-## Current release gate
+## Public source and release identity
 
-No public source-download location or release-specific dependency-license
-inventory has been supplied yet. Do not publish or hand out a production APK
-until both exist beside the binary. A source URL must be a real, durable
-location selected by the release owner; the project deliberately does not
-invent a placeholder URL.
+The durable public source repository is
+<https://github.com/gagaword/TunnelLens>. Each distributed APK must be attached
+to a GitHub Release whose immutable tag identifies the exact source. The
+v0.1.0 Android runtime dependency-license inventory is archived in
+`docs/licenses/ANDROID_RUNTIME_v0.1.0.md`; later versions must generate their
+own inventory rather than reusing it blindly.
+
+Do not publish an APK built from a moving branch name alone. Record the tag,
+full commit, APK checksum, source-archive checksum, signing-certificate digest,
+and validation results in the release manifest.
 
 License acceptance removes the former tun2proxy GPL product-decision blocker.
 It does **not** approve tun2proxy as the production runtime. Normal builds keep

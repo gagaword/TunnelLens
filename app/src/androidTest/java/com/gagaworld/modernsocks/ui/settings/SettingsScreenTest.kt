@@ -84,6 +84,9 @@ class SettingsScreenTest {
         }
 
         composeRule.onNodeWithText(
+            context.getString(R.string.settings_open_source_view_source),
+        ).assertExists()
+        composeRule.onNodeWithText(
             context.getString(R.string.settings_open_source_view_license),
         ).performScrollTo().performClick()
         composeRule.onNodeWithText(

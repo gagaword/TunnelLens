@@ -31,6 +31,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalResources
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -55,6 +56,8 @@ fun SettingsScreen(
 ) {
     var showLicense by rememberSaveable { mutableStateOf(false) }
     var showThirdPartyNotices by rememberSaveable { mutableStateOf(false) }
+    val uriHandler = LocalUriHandler.current
+    val sourceCodeUrl = stringResource(R.string.source_code_url)
 
     Column(
         modifier = modifier
@@ -121,6 +124,9 @@ fun SettingsScreen(
             title = stringResource(R.string.settings_open_source_title),
             body = stringResource(R.string.settings_open_source_body),
         ) {
+            TextButton(onClick = { uriHandler.openUri(sourceCodeUrl) }) {
+                Text(stringResource(R.string.settings_open_source_view_source))
+            }
             TextButton(onClick = { showLicense = true }) {
                 Text(stringResource(R.string.settings_open_source_view_license))
             }

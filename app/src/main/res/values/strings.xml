@@ -132,11 +132,13 @@
     <string name="settings_security_body">Passwords and usernames are encrypted with an app-only Android Keystore key. SOCKS5 itself may not encrypt traffic to the proxy server.</string>
     <string name="settings_open_source_title">Free and open-source software</string>
     <string name="settings_open_source_body">TunnelLens is licensed under GNU GPL v3 or later. You may redistribute and modify it under that license. It comes with absolutely no warranty. Distributed builds must provide the corresponding source and preserve third-party notices.</string>
+    <string name="settings_open_source_view_source">View source code</string>
     <string name="settings_open_source_view_license">View GNU GPL v3</string>
     <string name="settings_open_source_view_notices">View third-party notices</string>
     <string name="settings_open_source_license_title">GNU General Public License version 3</string>
     <string name="settings_open_source_notices_title">Third-party notices</string>
     <string name="settings_open_source_license_failed">The bundled license text could not be read.</string>
+    <string name="source_code_url" translatable="false">https://github.com/gagaword/TunnelLens</string>
     <string name="settings_phase_title">Project status</string>
     <string name="settings_phase_body">TunnelLens product reset — the current SOCKS5 IPv4 TCP runtime remains active while HTTP/HTTPS debug-proxy support moves through a reviewed migration.</string>
     <string name="home_metric_duration">Duration</string>

@@ -36,13 +36,14 @@ Corresponding Source and every applicable dependency notice.
 
 The application also uses the Kotlin toolchain, AndroidX, Jetpack Compose,
 Material Components, kotlinx.coroutines, kotlinx.serialization, Room,
-DataStore, and their resolved dependencies. Version coordinates are centralized
-in `gradle/libs.versions.toml`; the exact graph is resolved by Gradle.
+DataStore, and their resolved dependencies. Version coordinates are
+centralized in `gradle/libs.versions.toml`; the exact v0.1.0 runtime graph and
+license review are archived in
+`docs/licenses/ANDROID_RUNTIME_v0.1.0.md`. The full Apache-2.0 text is retained
+in `LICENSES/Apache-2.0.txt` and bundled in the application's offline
+third-party notice.
 
-Before any public or third-party binary distribution, the release owner must
-generate and review the exact dependency-license inventory for that build,
-bundle all required notices with the release, and archive the inventory beside
-the Corresponding Source. This repository does not treat this summary as a
-substitute for the original license texts or a release-specific inventory.
+Every later release must regenerate and review its own dependency-license
+inventory and archive it beside the Corresponding Source.
 
 This file is an engineering record, not legal advice.

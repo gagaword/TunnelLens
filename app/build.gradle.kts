@@ -11,6 +11,24 @@ val tun2ProxyPocEnabled = providers.gradleProperty("tun2proxyPoc")
     .map { it.toBooleanStrictOrNull() ?: false }
     .orElse(false)
     .get()
+val releaseSigningStoreFile = providers.environmentVariable(
+    "TUNNELLENS_SIGNING_STORE_FILE",
+).orNull
+val releaseSigningStorePassword = providers.environmentVariable(
+    "TUNNELLENS_SIGNING_STORE_PASSWORD",
+).orNull
+val releaseSigningKeyAlias = providers.environmentVariable(
+    "TUNNELLENS_SIGNING_KEY_ALIAS",
+).orNull
+val releaseSigningKeyPassword = providers.environmentVariable(
+    "TUNNELLENS_SIGNING_KEY_PASSWORD",
+).orNull
+val releaseSigningConfigured = listOf(
+    releaseSigningStoreFile,
+    releaseSigningStorePassword,
+    releaseSigningKeyAlias,
+    releaseSigningKeyPassword,
+).all { !it.isNullOrBlank() }
 
 android {
     namespace = "com.gagaworld.modernsocks"
@@ -25,7 +43,7 @@ android {
         minSdk = 26
         targetSdk = 36
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -46,8 +64,22 @@ android {
         }
     }
 
+    signingConfigs {
+        if (releaseSigningConfigured) {
+            create("release") {
+                storeFile = file(requireNotNull(releaseSigningStoreFile))
+                storePassword = releaseSigningStorePassword
+                keyAlias = releaseSigningKeyAlias
+                keyPassword = releaseSigningKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (releaseSigningConfigured) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

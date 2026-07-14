@@ -8,6 +8,10 @@ Android `VpnService` owns the TUN. The app provides bounded reconnect, aggregate
 
 The Compose/Material 3 interface is available in English and Simplified Chinese, with light, dark, and dynamic-color themes. `ModernSocks` remains in some internal package, class, database, and build identifiers during the staged migration so existing app data and native integration are not destructively renamed.
 
+Source code and immutable release history are published at
+<https://github.com/gagaword/TunnelLens>. Release binaries link to the exact
+tag and commit from which they were built.
+
 ## Build
 
 Use Android Studio with the project-compatible JDK and installed Android SDK 36.1, or run:
@@ -21,6 +25,9 @@ Run device UI tests when an emulator or device is connected:
 ```powershell
 .\gradlew.bat connectedDebugAndroidTest
 ```
+
+Maintainers create signed release APKs with `tools/build-release.ps1`. Signing
+keys and credentials remain outside the repository.
 
 See [docs/TECH_STACK.md](docs/TECH_STACK.md), [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md), [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/VPN_LIFECYCLE.md](docs/VPN_LIFECYCLE.md), and [docs/SECURITY.md](docs/SECURITY.md) for constraints and status.
 
